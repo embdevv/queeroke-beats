@@ -7,3 +7,8 @@
 scale = Vector2(0.511686, 0.584135)
 texture = ExtResource("1_061rh")
 script = ExtResource("1_wwxjf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
