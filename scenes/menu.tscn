@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=11 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="AudioStream" uid="uid://x277fwk7x6v1" path="res://assets/music/[TEST] without me.mp3" id="2_13sgg"]
 [ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
+[ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scenes/master_slider.gd" id="7_v86rl"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
@@ -24,8 +26,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_13sgg")
+autoplay = true
+bus = &"Music"
+
 [node name="Main" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -175,7 +181,11 @@ offset_right = 721.0
 offset_bottom = 27.0
 theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
-value = 50.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_v86rl")
+audio_bus_name = "Master"
 
 [node name="musicVolume" type="Label" parent="Options"]
 layout_mode = 1
@@ -271,3 +281,4 @@ text = "Calibration"
 [connection signal="pressed" from="Main/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Options/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Options/masterVolume/masterSlider" to="Options/masterVolume/masterSlider" method="_on_value_changed"]

@@ -1,6 +1,6 @@
 extends Control
 @onready var options: Panel = $Options
-@onready var background: Panel = $Background
+@onready var background: Panel = $Main
 
 func _ready() -> void:
 	options.hide()
