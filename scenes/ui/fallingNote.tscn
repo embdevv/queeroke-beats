@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcqmgg2ysrjbk"]
+
+[ext_resource type="Script" uid="uid://pinrff8nqu1h" path="res://scripts/ui/fallingNote.gd" id="1_1d4f8"]
+[ext_resource type="Texture2D" uid="uid://b4hw3wa04hir6" path="res://assets/beat.png" id="1_eg7iw"]
+[ext_resource type="Texture2D" uid="uid://boajdmhm0nv1c" path="res://assets/Center.PNG" id="3_pjrej"]
+[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/Rim.PNG" id="4_v4rii"]
+
+[node name="fallingKeys" type="Sprite2D"]
+position = Vector2(8, 7)
+scale = Vector2(0.511686, 0.584135)
+texture = ExtResource("1_eg7iw")
+script = ExtResource("1_1d4f8")
+center_texture = ExtResource("3_pjrej")
+rim_texture = ExtResource("4_v4rii")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
