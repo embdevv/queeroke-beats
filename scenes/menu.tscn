@@ -7,8 +7,8 @@
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
-[ext_resource type="Script" path="res://scenes/master_slider.gd" id="7_v86rl"]
-[ext_resource type="Script" path="res://scenes/resolution_opts.gd" id="9_i6lef"]
+[ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scenes/master_slider.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scenes/resolution_opts.gd" id="9_i6lef"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
