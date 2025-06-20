@@ -1,18 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://crad3bxd84npn" path="res://assets/IMG_2132.jpg" id="2_13sgg"]
+[ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scripts/master_slider.gd" id="7_v86rl"]
 [ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
-=======
-[ext_resource type="Script" path="res://scenes/master_slider.gd" id="7_v86rl"]
-[ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scenes/resolution_opts.gd" id="9_i6lef"]
->>>>>>> c578455f77d7cd3157b91c68c44f89d51ef37110
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
@@ -49,9 +44,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="Sprite2D" parent="Main"]
-position = Vector2(575.5, 321)
-scale = Vector2(0.486864, 0.390244)
-texture = ExtResource("2_13sgg")
+position = Vector2(575, 323)
+scale = Vector2(8.95313, 4.98438)
+texture = ExtResource("2_vjb58")
 
 [node name="Panel" type="Panel" parent="Main"]
 layout_mode = 0
@@ -301,10 +296,6 @@ grow_vertical = 0
 theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
 text = "Calibration"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(966, 543)
-zoom = Vector2(1.68, 1.68)
 
 [connection signal="pressed" from="Main/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
