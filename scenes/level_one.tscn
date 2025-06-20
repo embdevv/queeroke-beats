@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cad6cgog0myuo"]
+[gd_scene load_steps=4 format=3 uid="uid://0f6607e3ml8p"]
 
 [ext_resource type="Script" uid="uid://cdr3gbyfytnh2" path="res://scripts/level/level_one.gd" id="1_t18mc"]
 [ext_resource type="PackedScene" uid="uid://bcqmgg2ysrjbk" path="res://scenes/ui/fallingKeys.tscn" id="2_t18mc"]
