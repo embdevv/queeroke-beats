@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=3 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="2_vjb58"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(578, 328)
+scale = Vector2(8.95313, 4.98438)
+texture = ExtResource("2_vjb58")
+
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,10 +24,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -471.0
-offset_top = -250.0
-offset_right = 471.0
-offset_bottom = 250.0
+offset_left = -573.0
+offset_top = -319.0
+offset_right = 577.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -52,6 +58,20 @@ text = "OPTIONS"
 [node name="quitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.0
+offset_top = 159.0
+offset_right = 200.0
+offset_bottom = 236.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave] [rainbow] QueerOKE! beats [/rainbow] [/wave]"
 
 [connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
