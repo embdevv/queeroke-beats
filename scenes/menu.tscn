@@ -267,7 +267,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="resolutionLabel2" type="Label" parent="Options"]
+[node name="fullscreenLabel" type="Label" parent="Options"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
