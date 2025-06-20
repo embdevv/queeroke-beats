@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://goocumclyy5p"]
+
+[ext_resource type="Script" uid="uid://cel7nvq4j3dbr" path="res://scripts/ui/click_listener.gd" id="1_1dg0f"]
+[ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="1_gdedk"]
+
+[node name="clickListener" type="Sprite2D"]
+texture = ExtResource("1_gdedk")
+script = ExtResource("1_1dg0f")
+key_name = "leftClick"

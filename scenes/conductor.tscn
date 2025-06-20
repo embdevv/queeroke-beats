@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://sawmeeuqx6sk"]
+[gd_scene load_steps=2 format=3 uid="uid://sawmeeuqx6sk"]
+
+[ext_resource type="Script" uid="uid://rynosxlft2e8" path="res://scripts/conductor.gd" id="1_dqjak"]
 
 [node name="Conductor" type="AudioStreamPlayer"]
+script = ExtResource("1_dqjak")
 
 [node name="startTimer" type="Timer" parent="."]
+
+[connection signal="beat" from="." to="." method="_on_beat"]
