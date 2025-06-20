@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://dpx1ddxqs88ps"]
 
 [ext_resource type="Script" uid="uid://cdr3gbyfytnh2" path="res://scripts/level/level_one.gd" id="1_t18mc"]
 [ext_resource type="PackedScene" uid="uid://bcqmgg2ysrjbk" path="res://scenes/ui/fallingKeys.tscn" id="2_t18mc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_843q2"]
-=======
-[gd_scene load_steps=0 format=3 uid="uid://dpx1ddxqs88ps"]
->>>>>>> c578455f77d7cd3157b91c68c44f89d51ef37110
 
 [node name="levelOne" type="Node2D"]
 script = ExtResource("1_t18mc")
