@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=9 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="2_vjb58"]
+[ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
+[ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
+[ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
+[ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
 
-[node name="Menu" type="Control"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3eks"]
+color = Color(0.285033, 0.438443, 0.686677, 1)
+thickness = 5
+
+[node name="Node" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,12 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(578, 328)
-scale = Vector2(8.95313, 4.98438)
-texture = ExtResource("2_vjb58")
-
-[node name="Background" type="Panel" parent="."]
+[node name="Main" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,47 +39,82 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="bg" type="Sprite2D" parent="Main"]
+position = Vector2(575, 323)
+scale = Vector2(8.95313, 4.98438)
+texture = ExtResource("2_vjb58")
+
+[node name="Panel" type="Panel" parent="Main"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 641.0
+
+[node name="Title" type="RichTextLabel" parent="Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_top = 93.0
+offset_right = 310.0
+offset_bottom = 185.0
+grow_horizontal = 2
+scale = Vector2(1.06199, 0.846168)
+theme_override_fonts/normal_font = ExtResource("3_g3eks")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[wave] [rainbow] Queer-OKE! beats"
+fit_content = true
+
+[node name="Subtitle" type="RichTextLabel" parent="Main"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 175.0
+offset_right = 314.0
+offset_bottom = 220.0
+grow_horizontal = 2
+scale = Vector2(1.06199, 0.846168)
+theme_override_fonts/normal_font = ExtResource("3_con2f")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "a game of queer experiences ... in beats"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
-offset_top = -50.5
-offset_right = 39.5
-offset_bottom = 50.5
+offset_left = -98.0
+offset_top = -74.5
+offset_right = -19.0
+offset_bottom = 26.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.33776, 2.33333)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="startButton" type="Button" parent="VBoxContainer"]
+[node name="startButton" type="Button" parent="Main/VBoxContainer"]
+texture_filter = 2
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g3eks")
 text = "START"
 
-[node name="optionsButton" type="Button" parent="VBoxContainer"]
+[node name="optionsButton" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g3eks")
 text = "OPTIONS"
 
-[node name="quitButton" type="Button" parent="VBoxContainer"]
+[node name="quitButton" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_g3eks")
 text = "QUIT"
-
-[node name="Title" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -187.0
-offset_top = 159.0
-offset_right = 200.0
-offset_bottom = 236.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 40
-bbcode_enabled = true
-text = "[wave] [rainbow] QueerOKE! beats [/rainbow] [/wave]"
 
 [node name="Options" type="Panel" parent="."]
 layout_mode = 1
@@ -87,6 +130,14 @@ offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="backButton" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 151.0
+offset_bottom = 70.0
+text = "BACK"
+
 [node name="optionsLabel" type="Label" parent="Options"]
 layout_mode = 1
 anchors_preset = 5
@@ -101,64 +152,122 @@ theme_override_font_sizes/font_size = 38
 text = "Options"
 horizontal_alignment = 1
 
-[node name="volumeLabel" type="Label" parent="Options"]
+[node name="masterVolume" type="Label" parent="Options"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -475.5
-offset_top = 159.0
-offset_right = -79.5
-offset_bottom = 212.0
+offset_left = -494.5
+offset_top = 134.0
+offset_right = -98.5
+offset_bottom = 187.0
 grow_horizontal = 2
+theme = ExtResource("4_4ytvr")
+theme_override_fonts/font = ExtResource("5_g3eks")
 theme_override_font_sizes/font_size = 38
-text = "Volume"
+text = "Master Volume"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Options/volumeLabel"]
+[node name="masterSlider" type="HSlider" parent="Options/masterVolume"]
 layout_mode = 0
-offset_left = 331.0
-offset_top = 15.0
-offset_right = 722.0
-offset_bottom = 42.0
+offset_left = 330.0
+offset_right = 721.0
+offset_bottom = 27.0
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+value = 50.0
+
+[node name="musicVolume" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -496.5
+offset_top = 190.0
+offset_right = -100.5
+offset_bottom = 243.0
+grow_horizontal = 2
+theme = ExtResource("4_4ytvr")
+theme_override_fonts/font = ExtResource("5_g3eks")
+theme_override_font_sizes/font_size = 38
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="musicSlider" type="HSlider" parent="Options/musicVolume"]
+layout_mode = 0
+offset_left = 330.0
+offset_right = 721.0
+offset_bottom = 27.0
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+value = 50.0
+
+[node name="sfxVolume" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -495.5
+offset_top = 247.0
+offset_right = -99.5
+offset_bottom = 300.0
+grow_horizontal = 2
+theme = ExtResource("4_4ytvr")
+theme_override_fonts/font = ExtResource("5_g3eks")
+theme_override_font_sizes/font_size = 38
+text = "Sfx Volume"
+horizontal_alignment = 1
+
+[node name="sfxSlider" type="HSlider" parent="Options/sfxVolume"]
+layout_mode = 0
+offset_left = 330.0
+offset_right = 721.0
+offset_bottom = 27.0
+theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+value = 50.0
 
 [node name="resolutionLabel" type="Label" parent="Options"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -477.5
-offset_top = 231.0
-offset_right = -81.5
-offset_bottom = 284.0
+offset_left = -501.5
+offset_top = 302.0
+offset_right = -105.5
+offset_bottom = 355.0
 grow_horizontal = 2
+theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
 text = "Resolution"
 horizontal_alignment = 1
 
-[node name="calibrationLabel" type="Label" parent="Options"]
+[node name="OptionButton" type="OptionButton" parent="Options/resolutionLabel"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 3.0
+offset_right = 358.0
+offset_bottom = 23.0
+scale = Vector2(1.79505, 1.45167)
+
+[node name="calibrationLabel" type="Button" parent="Options"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -480.5
-offset_top = 299.0
-offset_right = -84.5
-offset_bottom = 352.0
+anchor_bottom = 1.0
+offset_left = -196.5
+offset_top = -112.0
+offset_right = 199.5
+offset_bottom = -59.0
 grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
 text = "Calibration"
-horizontal_alignment = 1
 
-[node name="backButton" type="Button" parent="Options"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 17.0
-offset_right = 151.0
-offset_bottom = 70.0
-text = "BACK"
-
-[connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Main/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Options/backButton" to="." method="_on_back_button_pressed"]

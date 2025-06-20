@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://brhbv8ijqk3am"]
+
+[ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="1_ubhg7"]
+
+[resource]
+default_font = ExtResource("1_ubhg7")
