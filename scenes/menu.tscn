@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=11 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="AudioStream" uid="uid://x277fwk7x6v1" path="res://assets/music/[TEST] without me.mp3" id="2_13sgg"]
 [ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/icon.svg" id="2_vjb58"]
 [ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
@@ -28,7 +27,6 @@ grow_vertical = 2
 script = ExtResource("1_yqeox")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_13sgg")
 autoplay = true
 
 [node name="Main" type="Panel" parent="."]
