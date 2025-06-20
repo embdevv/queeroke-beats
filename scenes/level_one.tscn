@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cad6cgog0myuo"]
+[gd_scene load_steps=4 format=3 uid="uid://cad6cgog0myuo"]
 
 [ext_resource type="Script" uid="uid://cdr3gbyfytnh2" path="res://scripts/level/level_one.gd" id="1_t18mc"]
 [ext_resource type="PackedScene" uid="uid://bcqmgg2ysrjbk" path="res://scenes/ui/fallingKeys.tscn" id="2_t18mc"]
 [ext_resource type="PackedScene" uid="uid://goocumclyy5p" path="res://scenes/ui/clickListener.tscn" id="3_843q2"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_843q2"]
 
 [node name="levelOne" type="Node2D"]
 script = ExtResource("1_t18mc")
@@ -19,11 +17,5 @@ scale = Vector2(2.17969, 2.02344)
 
 [node name="fallingKeys" parent="." instance=ExtResource("2_t18mc")]
 modulate = Color(0.923597, 0.902918, 0.553057, 1)
-position = Vector2(2046, 1186)
+position = Vector2(3749, 1231)
 scale = Vector2(0.420407, 0.554327)
-
-[node name="fallingKeys2" parent="." instance=ExtResource("2_t18mc")]
-modulate = Color(0.298039, 0.752941, 0.8, 1)
-material = SubResource("CanvasItemMaterial_843q2")
-position = Vector2(3354, 1175)
-scale = Vector2(0.438829, 0.577284)
