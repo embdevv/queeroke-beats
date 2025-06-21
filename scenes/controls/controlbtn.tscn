@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://2ufo1ewowbwf"]
+
+[ext_resource type="Script" uid="uid://7gf7oa1bj47u" path="res://scripts/controlbtn.gd" id="1_17uwd"]
+
+[node name="Controlbtn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17uwd")
+
+[node name="reloadBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 3.0
+offset_right = 141.0
+offset_bottom = 36.0
+
+[node name="pauseBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 3.0
+offset_right = 189.0
+offset_bottom = 36.0
+text = "||"
+icon_alignment = 1
+
+[node name="BarIndex" type="SpinBox" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 96.0
+offset_bottom = 37.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 42.0
+offset_right = 78.0
+offset_bottom = 74.0
+
+[node name="CurrBarIndex" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 105.0
+offset_right = 61.0
+offset_bottom = 145.0
+
+[connection signal="pressed" from="reloadBtn" to="." method="_on_reload_btn_pressed"]
+[connection signal="pressed" from="pauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="changed" from="BarIndex" to="." method="_on_bar_index_changed"]
+[connection signal="value_changed" from="BarIndex" to="." method="_on_bar_index_value_changed"]
