@@ -11,8 +11,8 @@ metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_horizontal_guides_ = [280.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-13, -10)
-zoom = Vector2(0.8, 0.8)
+position = Vector2(-16, 79)
+zoom = Vector2(1.2, 1.2)
 
 [node name="Frame1" type="Sprite2D" parent="."]
 position = Vector2(-159, -7)
