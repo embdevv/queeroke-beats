@@ -35,7 +35,7 @@ func _process(delta):
 		if Input.is_action_just_pressed(key_name):
 			var key_to_pop = falling_key_queue.pop_front()
 			
-			var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
+			var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.position.y)
 			
 			var press_score_text: String = ""
 			if distance_from_pass < perfect_press_threshold:
