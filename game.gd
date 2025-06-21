@@ -77,6 +77,8 @@ func setup():
 	track.bars_data = bars
 	track.speed = speed
 	track.note_scale = note_scale
+	track.quarter_time_in_sec = quarter_time_in_sec
+	track.start_pos_in_sec = start_pos_in_sec
 	#track.position = $TrackPos.position
 	$TrackC.add_child(track)	
 	

@@ -1,7 +1,7 @@
 extends Node2D
 
 var map_bar_index = -1  # track exact bar index 
-
+const NOTE_SCENE = preload("res://notes/normal_note.tscn")
 var bar_scn = preload("res://scenes/bar/bar.tscn")
 #var collect_anim = preload("res://note/collect_note_anim.tscn")
 #var pile_anim = preload("res://track/pile_anim.tscn")
@@ -9,6 +9,8 @@ var bar_scn = preload("res://scenes/bar/bar.tscn")
 
 var bars = []
 var notes_count = 0
+var start_pos_in_sec = 0.0
+var quarter_time_in_sec = 0.0
 
 var bars_data = [
 		{
@@ -146,35 +148,23 @@ func add_bar():
 	
 	curr_bar_x += bar.length
 	curr_bar_index += 1
-	
-func process_with_time(time, delta):
-	#print("map_bar_index:", map_bar_index)
-	#print("tpos: ", $BarsPosition.position.x)
-	
-	bars_node.position.x -= speed*delta
-	
-	var position_x = -time * speed + $BarsPosition.position.x
-	
-	#print("x: ", position_x)
-	#print("curr x:", bars_node.position.x)
+
+func spawn_note(note):
+	var instance = NOTE_SCENE.instantiate()
+	instance.position = Vector2(note.pos * note_scale + curr_bar_x, 0) # Adjust y as needed
+	add_child(instance)
+
+func process_with_time(music_time, delta):
+	for bar in bars_data:
+		var bar_index = bar.index
+		var bar_time = start_pos_in_sec + (bar_index * 4 * quarter_time_in_sec)
 		
-	if abs(bars_node.position.x - position_x) > speed*delta*2.0:
-		print("FIX delay! ", bars_node.position.x - position_x)
-		bars_node.position.x = position_x	
-	
-	
-	for bar in bars:		
-		if bar.global_position.x + bar.length < self.global_position.x:
-			remove_bar(bar)
-			add_bar()
-			
-		if bar.global_position.x <= self.global_position.x:
-			if map_bar_index < bar.index:
-				map_bar_index = bar.index
-				#emit_signal("bar_index_updated", map_bar_index)
-				#print("bar_index_updated:", map_bar_index)
-				emit_signal("bar_index_updated", map_bar_index)
-			
+		for note in bar.notes:
+			var note_time = bar_time + (note.pos / 400.0) * quarter_time_in_sec
+			if note_time <= music_time + 2.0 and not note.has("spawned"):
+				spawn_note(note)
+				note["spawned"] = true  
+
 
 func remove_bar(bar):
 	#print("delete bar")

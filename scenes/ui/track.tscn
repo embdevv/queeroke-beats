@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj4vm4aw3qy1y"]
+[gd_scene load_steps=5 format=3 uid="uid://dj4vm4aw3qy1y"]
 
 [ext_resource type="PackedScene" uid="uid://btrxxoy1oev2j" path="res://scenes/ui/track_progress.tscn" id="1_2mrcj"]
 [ext_resource type="Script" uid="uid://eljhs71h4ss0" path="res://scenes/ui/track.gd" id="1_w668p"]
+[ext_resource type="PackedScene" uid="uid://covu5uuwpe1x2" path="res://notes/normal_note.tscn" id="3_e4uuf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw4u2"]
 radius = 76.0
@@ -21,4 +22,8 @@ position = Vector2(75, 43)
 shape = SubResource("CircleShape2D_yw4u2")
 
 [node name="TrackProgress" parent="." instance=ExtResource("1_2mrcj")]
+visible = false
 position = Vector2(2, 138)
+
+[node name="NormalNote" parent="." instance=ExtResource("3_e4uuf")]
+position = Vector2(1068, 57)

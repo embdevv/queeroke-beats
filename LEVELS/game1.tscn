@@ -34,6 +34,7 @@ offset_right = 1153.0
 offset_bottom = 651.0
 
 [node name="Track" parent="Panel" instance=ExtResource("5_q7ts5")]
+position = Vector2(2, -83)
 
 [node name="Title" type="Control" parent="."]
 layout_mode = 3
