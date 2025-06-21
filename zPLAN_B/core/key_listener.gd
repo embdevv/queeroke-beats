@@ -4,6 +4,7 @@ var frame := 0
 @onready var falling_key = preload("res://zPLAN_B/core/falling_key.tscn")
 @onready var score_text = preload("res://zPLAN_B/core/score_press_text.tscn")
 @export var key_name: String = ""
+@export var array_mum: int = 0
 
 var falling_key_queue = []
 
@@ -23,8 +24,15 @@ func _ready():
 
 func _process(delta):
 	
-	if Input.is_action_just_pressed(key_name):
-		Signals.KeyListenerPress.emit(key_name, frame)
+	if Input.is_action_just_pressed("button_A"):
+		Signals.KeyListenerPress.emit("button_A", 0)
+	if Input.is_action_just_pressed("button_S"):
+		Signals.KeyListenerPress.emit("button_S", 1)
+	if Input.is_action_just_pressed("button_K"):
+		Signals.KeyListenerPress.emit("button_K", 2)
+	if Input.is_action_just_pressed("button_L"):
+		Signals.KeyListenerPress.emit("button_L", 3)
+		
 	if falling_key_queue.size() > 0:
 		
 		if falling_key_queue.front().has_passed:
@@ -66,7 +74,7 @@ func _process(delta):
 				press_score_text = "MISS"
 				Signals.ResetCombo.emit()
 			
-			key_to_pop.queue_free()
+			key_to_pop.queue_free() 
 			
 			var st_inst = score_text.instantiate()
 			get_tree().get_root().call_deferred("add_child", st_inst)
