@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://ti7hl3sam76h" path="res://scenes/ui/falling_key.tscn" id="8_32v03"]
 
 [node name="Game1" type="Node2D" node_paths=PackedStringArray("frame_1", "frame_2")]
+position = Vector2(-583, -568)
 script = ExtResource("1_4ctl1")
 frame_1 = NodePath("Frame1")
 frame_2 = NodePath("Frame2")
-metadata/_edit_vertical_guides_ = [80.0, 1312.0]
+metadata/_edit_vertical_guides_ = [80.0, 1262.0]
 metadata/_edit_horizontal_guides_ = [545.0, 545.0]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -49,6 +50,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Title"]
 layout_mode = 0
@@ -63,5 +65,9 @@ horizontal_alignment = 2
 uppercase = true
 
 [node name="fallingKey" parent="." instance=ExtResource("8_32v03")]
+visible = false
 position = Vector2(1264, 546)
 scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 320)
