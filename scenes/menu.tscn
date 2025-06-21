@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=13 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://bnrtktp44yk3n" path="res://LEVELS/MUSIC/startingScreen.mp3" id="2_i6lef"]
@@ -8,14 +8,15 @@
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
 [ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scripts/master_slider.gd" id="7_v86rl"]
+[ext_resource type="Texture2D" uid="uid://bsjcn0a3o5hyo" path="res://assets/output-onlinepngtools.png" id="8_70i5f"]
 [ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_70i5f"]
+color = Color(0.398642, 0.587427, 1, 1)
+thickness = 7
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
-thickness = 5
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3eks"]
-color = Color(0.285033, 0.438443, 0.686677, 1)
 thickness = 5
 
 [node name="Node" type="Control"]
@@ -166,8 +167,8 @@ layout_mode = 0
 offset_left = 330.0
 offset_right = 721.0
 offset_bottom = 27.0
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
+theme_override_icons/grabber = ExtResource("8_70i5f")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_70i5f")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -210,7 +211,6 @@ offset_left = 330.0
 offset_right = 721.0
 offset_bottom = 27.0
 theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
 value = 50.0
 
 [node name="sfxVolume" type="Label" parent="Options"]
@@ -235,7 +235,6 @@ offset_left = 330.0
 offset_right = 721.0
 offset_bottom = 27.0
 theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_g3eks")
 value = 50.0
 
 [node name="resolutionLabel" type="Label" parent="Options"]
