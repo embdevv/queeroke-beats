@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://pinrff8nqu1h" path="res://scripts/ui/fallingNote.gd" id="1_1d4f8"]
 [ext_resource type="Texture2D" uid="uid://b4hw3wa04hir6" path="res://assets/beat.png" id="1_eg7iw"]
-[ext_resource type="Texture2D" uid="uid://boajdmhm0nv1c" path="res://assets/Center.PNG" id="3_pjrej"]
-[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/Rim.PNG" id="4_v4rii"]
+[ext_resource type="Texture2D" uid="uid://boajdmhm0nv1c" path="res://assets/yellow_sprite.PNG" id="3_pjrej"]
+[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/blue_sprite.PNG" id="4_v4rii"]
 
 [node name="fallingKeys" type="Sprite2D"]
 position = Vector2(8, 7)

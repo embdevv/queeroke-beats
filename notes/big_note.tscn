@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://doevydn5jwh48"]
+
+[ext_resource type="Script" uid="uid://bixakmk0ambhs" path="res://notes/big_note.gd" id="1_n5wwa"]
+[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/blue_sprite.PNG" id="2_bc42w"]
+[ext_resource type="PackedScene" uid="uid://bfr8lrmvm3gpa" path="res://notes/note_label.tscn" id="3_mopq2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpcuv"]
+radius = 49.0102
+
+[node name="BigNote" type="Node2D"]
+script = ExtResource("1_n5wwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 2)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_bc42w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_fpcuv")
+
+[node name="Label" parent="." instance=ExtResource("3_mopq2")]

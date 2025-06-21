@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://copc15asbqdjk"
-path="res://.godot/imported/Rim.PNG-ee1565470d413f22c8543d3c1f16b751.ctex"
+path="res://.godot/imported/blue_sprite.PNG-1f88cc9cd20e45a3ca36a22607dfde14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rim.PNG"
-dest_files=["res://.godot/imported/Rim.PNG-ee1565470d413f22c8543d3c1f16b751.ctex"]
+source_file="res://assets/blue_sprite.PNG"
+dest_files=["res://.godot/imported/blue_sprite.PNG-1f88cc9cd20e45a3ca36a22607dfde14.ctex"]
 
 [params]
 

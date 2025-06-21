@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bfr8lrmvm3gpa"]
+
+[node name="Label" type="Label"]
+offset_left = -18.0
+offset_top = 84.0
+offset_right = 22.0
+offset_bottom = 107.0
+text = "DON"

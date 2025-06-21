@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx7q7up41l4q8"]
+
+[sub_resource type="Gradient" id="Gradient_hgckl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qg4fj"]
+gradient = SubResource("Gradient_hgckl")
+
+[sub_resource type="Gradient" id="Gradient_6renh"]
+offsets = PackedFloat32Array(0, 0.542484, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.772549, 0.192157, 0.0901961, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mxl6g"]
+gradient = SubResource("Gradient_6renh")
+
+[node name="PrecisionLabel" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -11.0
+offset_right = 25.0
+offset_bottom = 12.0
+text = "GOOD"
+
+[node name="WhiteLight" type="PointLight2D" parent="."]
+top_level = true
+light_mask = 2
+position = Vector2(5, -5)
+rotation = 1.57745
+scale = Vector2(0.0691203, 4.08372)
+energy = 1.45
+blend_mode = 2
+texture = SubResource("GradientTexture2D_qg4fj")
+texture_scale = 1.55
+height = 45.0
+
+[node name="RedLight" type="PointLight2D" parent="."]
+position = Vector2(8, -10)
+rotation = -0.00149444
+scale = Vector2(3.18898, 0.127937)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_mxl6g")

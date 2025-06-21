@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hw3wa04hir6"
-path="res://.godot/imported/beat.png-01c0e9aea30329b69bccf69840046ae0.ctex"
+uid="uid://boajdmhm0nv1c"
+path="res://.godot/imported/yellow_sprite.PNG-dafd7d180709a3683be7b5eb51d8b50e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/beat.png"
-dest_files=["res://.godot/imported/beat.png-01c0e9aea30329b69bccf69840046ae0.ctex"]
+source_file="res://assets/yellow_sprite.PNG"
+dest_files=["res://.godot/imported/yellow_sprite.PNG-dafd7d180709a3683be7b5eb51d8b50e.ctex"]
 
 [params]
 
