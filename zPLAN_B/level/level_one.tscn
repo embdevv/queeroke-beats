@@ -8,48 +8,49 @@
 [ext_resource type="PackedScene" uid="uid://clsx6sj35xxan" path="res://zPLAN_B/core/level_editor.tscn" id="6_1mhk1"]
 
 [node name="LevelOne" type="Node2D"]
+position = Vector2(-4, -105)
 metadata/_edit_vertical_guides_ = [0.0]
-metadata/_edit_horizontal_guides_ = [280.0]
+metadata/_edit_horizontal_guides_ = [280.0, -358.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-13, -10)
+position = Vector2(-8, 101)
 zoom = Vector2(0.9, 0.9)
 
 [node name="Frame2" type="Sprite2D" parent="."]
-position = Vector2(-159, -7)
+position = Vector2(-154, 104)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_6kkp2")
 
 [node name="Frame1" type="Sprite2D" parent="."]
-position = Vector2(-159, -7)
+position = Vector2(-154, 104)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_txpru")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -222.0
-offset_top = -369.0
+offset_top = -251.0
 offset_right = 223.0
-offset_bottom = 348.0
+offset_bottom = 466.0
 
 [node name="Panel2" type="Panel" parent="."]
-offset_left = -224.0
-offset_top = 219.0
-offset_right = 223.0
-offset_bottom = 321.0
+offset_left = -228.0
+offset_top = 326.0
+offset_right = 219.0
+offset_bottom = 428.0
 
 [node name="KeyListenA" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(-156, 280)
+position = Vector2(-160, 387)
 
 [node name="KeyListenS" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(-52, 280)
+position = Vector2(-56, 387)
 key_name = "button_S"
 
 [node name="KeyListenK" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(58, 280)
+position = Vector2(54, 387)
 key_name = "button_K"
 
 [node name="KeyListenL" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(163, 280)
+position = Vector2(159, 387)
 key_name = "button_L"
 
 [node name="ScorePressText" parent="." instance=ExtResource("4_1mhk1")]
