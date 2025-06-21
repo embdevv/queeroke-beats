@@ -7,10 +7,11 @@ var current_level_name = "TRANSition"
 var fk_fall_time: float = 2.2
 var fk_output_arr = [[], [], [], []]
 
+
 var level_info = {
 	"TRANSition" = {
-		"fk_times": "[[1], [2], [3], [4]]",
-		"music": preload("res://zPLAN_B/MUSIC/gamejamtest2 (1).mp3")
+		"fk_times": "",
+		"music": preload("res://zPLAN_B/MUSIC/Rhythm Hell.wav")#preload("res://zPLAN_B/MUSIC/gamejamtest2 (1).mp3")
 	}
 }
 
@@ -46,8 +47,13 @@ func _ready():
 			counter += 1
 
 func KeyListenerPress(button_name: String, array_num: int):
-	print(array_num)
-
+	print(str(array_num) + " " + str($MusicPlayer.get_playback_position()))
+	fk_output_arr[array_num].append($MusicPlayer.get_playback_position() - fk_fall_time)
+	
 func SpawnFallingKey(button_name: String, delay: float):
 	await get_tree().create_timer(delay).timeout
 	Signals.CreateFallingKey.emit(button_name)
+
+
+func _on_music_player_finished():
+	print(fk_output_arr)
