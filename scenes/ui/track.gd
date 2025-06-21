@@ -151,8 +151,9 @@ func add_bar():
 
 func spawn_note(note):
 	var instance = NOTE_SCENE.instantiate()
-	instance.position = Vector2(note.pos * note_scale + curr_bar_x, 0) # Adjust y as needed
+	instance.position = Vector2(note.pos * note_scale + curr_bar_x, 80) # Adjust y as needed
 	add_child(instance)
+	
 
 func process_with_time(music_time, delta):
 	for bar in bars_data:

@@ -1,6 +1,7 @@
 @tool
 extends "res://notes/base_note.gd"
 
+@export var speed = 600.0
 const SCORE = 2020
 
 func _on_collect(side):

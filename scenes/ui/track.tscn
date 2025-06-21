@@ -26,4 +26,6 @@ visible = false
 position = Vector2(2, 138)
 
 [node name="NormalNote" parent="." instance=ExtResource("3_e4uuf")]
+visible = false
 position = Vector2(1068, 57)
+speed = null

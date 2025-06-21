@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddp7yrqls3spu"]
+[gd_scene load_steps=9 format=3 uid="uid://ddp7yrqls3spu"]
 
 [ext_resource type="Script" uid="uid://bwst61jplarcf" path="res://LEVELS/game1.gd" id="1_4ctl1"]
 [ext_resource type="Texture2D" uid="uid://cgevjkjq4tewy" path="res://assets/levelOne/Frame1.PNG" id="2_kn33y"]
 [ext_resource type="AudioStream" uid="uid://b1p3we54i6nyg" path="res://LEVELS/MUSIC/LevelOne.ogg" id="2_q7ts5"]
 [ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="3_q7ts5"]
 [ext_resource type="PackedScene" uid="uid://dj4vm4aw3qy1y" path="res://scenes/ui/track.tscn" id="5_q7ts5"]
+[ext_resource type="PackedScene" uid="uid://c5tntnhn81fjv" path="res://scenes/ui/beatListener.tscn" id="6_a1isp"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="6_vstu5"]
+[ext_resource type="PackedScene" uid="uid://ti7hl3sam76h" path="res://scenes/ui/falling_key.tscn" id="8_32v03"]
 
 [node name="Game1" type="Node2D" node_paths=PackedStringArray("frame_1", "frame_2")]
 script = ExtResource("1_4ctl1")
 frame_1 = NodePath("Frame1")
 frame_2 = NodePath("Frame2")
+metadata/_edit_vertical_guides_ = [80.0, 1312.0]
+metadata/_edit_horizontal_guides_ = [545.0, 545.0]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_q7ts5")
@@ -36,6 +40,10 @@ offset_bottom = 651.0
 [node name="Track" parent="Panel" instance=ExtResource("5_q7ts5")]
 position = Vector2(2, -83)
 
+[node name="Node2D" parent="Panel" instance=ExtResource("6_a1isp")]
+position = Vector2(79, -16)
+scale = Vector2(0.07, 0.07)
+
 [node name="Title" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -53,3 +61,7 @@ theme_override_font_sizes/font_size = 35
 text = "Phoebe's song"
 horizontal_alignment = 2
 uppercase = true
+
+[node name="fallingKey" parent="." instance=ExtResource("8_32v03")]
+position = Vector2(1264, 546)
+scale = Vector2(0.5, 0.5)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5tntnhn81fjv"]
+
+[ext_resource type="Script" uid="uid://d1a6wwmcwi2ur" path="res://scenes/ui/beat_listener.gd" id="1_bkecf"]
+[ext_resource type="Texture2D" uid="uid://dmw6j3rk7gqje" path="res://assets/levelOne/hitbox.PNG" id="2_bkecf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bkecf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-31, -67)
+texture = ExtResource("2_bkecf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
