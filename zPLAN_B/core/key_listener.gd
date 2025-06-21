@@ -30,18 +30,19 @@ func _process(delta):
 		if falling_key_queue.front().has_passed:
 			falling_key_queue.pop_front()
 			
-			var st_inst = score_text.instantiate()
-			get_tree().get_root().call_deferred("add_child", st_inst)
-			st_inst.setTextInfo("MISS")
-			st_inst.global_position = global_position + Vector2(0, -30)
+			#var st_inst = score_text.instantiate()
+			#get_tree().get_root().call_deferred("add_child", st_inst)
+			##st_inst.setTextInfo("MISS")
+			#st_inst.global_position = global_position + Vector2(0, -30)
 			Signals.ResetCombo.emit()
 			
 		if Input.is_action_just_pressed(key_name):
 			var key_to_pop = falling_key_queue.pop_front()
 			
-			var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.position.y)
+			var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 			
 			var press_score_text: String = ""
+			
 			if distance_from_pass < perfect_press_threshold:
 				Signals.IncrementScore.emit(perfect_press_score)
 				press_score_text = "PERFECT"
@@ -58,12 +59,19 @@ func _process(delta):
 				Signals.IncrementScore.emit(ok_press_score)
 				press_score_text = "OKAY"
 				Signals.IncrementCombo.emit()
+			elif distance_from_pass > abs(key_to_pop.pass_threshold - key_to_pop.global_position.y):
+				press_score_text = "MISS"
+				Signals.ResetCombo.emit()
 			else:
 				press_score_text = "MISS"
 				Signals.ResetCombo.emit()
 			
 			key_to_pop.queue_free()
 			
+			var st_inst = score_text.instantiate()
+			get_tree().get_root().call_deferred("add_child", st_inst)
+			st_inst.setTextInfo(press_score_text)
+			st_inst.global_position = global_position + Vector2(0, -20)
 
 	
 func createFallingKey(button_name: String):
