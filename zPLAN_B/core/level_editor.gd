@@ -16,7 +16,6 @@ var level_info = {
 
 func _ready():
 	
-	await get_tree().create_timer(2).timeout
 	$MusicPlayer.stream = level_info.get(current_level_name).get("music")
 	$MusicPlayer.play()
 

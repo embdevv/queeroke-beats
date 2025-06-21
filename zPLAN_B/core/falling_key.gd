@@ -3,7 +3,7 @@ extends Node2D
 @export var fall_speed: float = 400
 var frame: int = 0
 
-var init_y_pos: float = -450
+var init_y_pos: float = -360
 
 var has_passed: bool = false
 var pass_threshold = 300.0
