@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=19 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://bnrtktp44yk3n" path="res://LEVELS/MUSIC/startingScreen.mp3" id="2_i6lef"]
@@ -11,14 +11,30 @@
 [ext_resource type="Texture2D" uid="uid://bsjcn0a3o5hyo" path="res://assets/output-onlinepngtools.png" id="8_70i5f"]
 [ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
 [ext_resource type="Texture2D" uid="uid://dntb2qb012hhr" path="res://assets/calibration.PNG" id="11_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://0rdcehh0pws" path="res://assets/resolution.PNG" id="11_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://cpq2xsljpvv2w" path="res://assets/menubuttons.PNG" id="13_6cdou"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i42df"]
+texture = ExtResource("13_6cdou")
+expand_margin_left = 14.0
+expand_margin_top = 11.0
+expand_margin_right = 14.0
+expand_margin_bottom = 15.0
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_70i5f"]
 color = Color(0.398642, 0.587427, 1, 1)
-thickness = 7
+thickness = 8
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
 thickness = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cdou"]
+texture = ExtResource("11_ufwb2")
+expand_margin_left = 25.0
+expand_margin_top = 48.0
+expand_margin_right = 20.0
+expand_margin_bottom = 55.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mj5lg"]
 texture = ExtResource("11_mj5lg")
@@ -115,20 +131,90 @@ size_flags_vertical = 4
 [node name="startButton" type="Button" parent="Main/VBoxContainer"]
 texture_filter = 2
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "START"
 
 [node name="optionsButton" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "OPTIONS"
 
 [node name="quitButton" type="Button" parent="Main/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_g3eks")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "QUIT"
 
 [node name="Options" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,6 +234,30 @@ offset_left = 35.0
 offset_top = 17.0
 offset_right = 151.0
 offset_bottom = 70.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "BACK"
 
 [node name="masterVolume" type="Label" parent="Options"]
@@ -261,14 +371,25 @@ horizontal_alignment = 1
 
 [node name="windowSizeSettings" type="VBoxContainer" parent="Options/resolutionLabel"]
 layout_mode = 0
-offset_left = 334.0
-offset_right = 539.0
+offset_left = 341.0
+offset_right = 546.0
 offset_bottom = 83.0
 script = ExtResource("9_i6lef")
 
 [node name="resolutionDropMenu" type="OptionButton" parent="Options/resolutionLabel/windowSizeSettings"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_6cdou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6cdou")
 
 [node name="fullscreenCheckBox" type="CheckBox" parent="Options/resolutionLabel/windowSizeSettings"]
 layout_mode = 2
@@ -351,6 +472,30 @@ offset_left = 35.0
 offset_top = 17.0
 offset_right = 151.0
 offset_bottom = 70.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "BACK"
 
 [node name="timing" type="HBoxContainer" parent="Calibration"]
