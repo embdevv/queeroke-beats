@@ -6,8 +6,8 @@
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
-[ext_resource type="Script" path="res://scripts/master_slider.gd" id="7_v86rl"]
-[ext_resource type="Script" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
+[ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scripts/master_slider.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
 color = Color(1, 1, 1, 1)
@@ -297,6 +297,28 @@ theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
 text = "Calibration"
 
+[node name="Calibration" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -439.5
+offset_top = -182.0
+offset_right = 439.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="calibBackButton" type="Button" parent="Calibration"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 151.0
+offset_bottom = 70.0
+text = "BACK"
+
 [connection signal="pressed" from="Main/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
@@ -304,3 +326,5 @@ text = "Calibration"
 [connection signal="value_changed" from="Options/masterVolume/masterSlider" to="Options/masterVolume/masterSlider" method="_on_value_changed"]
 [connection signal="item_selected" from="Options/resolutionLabel/windowSizeSettings/resolutionDropMenu" to="Options/resolutionLabel/windowSizeSettings" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Options/resolutionLabel/windowSizeSettings/fullscreenCheckBox" to="Options/resolutionLabel/windowSizeSettings" method="_on_fullscreen_check_box_toggled"]
+[connection signal="pressed" from="Options/calibrationLabel" to="." method="_on_calibration_label_pressed"]
+[connection signal="pressed" from="Calibration/calibBackButton" to="." method="_on_calib_back_button_pressed"]
