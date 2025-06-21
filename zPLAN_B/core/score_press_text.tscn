@@ -121,14 +121,12 @@ text = "[center]OKAY"
 fit_content = true
 
 [node name="TRANS_LIGHT" type="PointLight2D" parent="ScoreLevelText"]
-visible = false
 position = Vector2(108.988, 31.4129)
 scale = Vector2(1, 54.7709)
 blend_mode = 2
 texture = SubResource("GradientTexture1D_vi2f2")
 
 [node name="Shine_Light" type="PointLight2D" parent="ScoreLevelText"]
-visible = false
 position = Vector2(111.971, 33.339)
 rotation = -0.404202
 scale = Vector2(1.45781, 32.876)
