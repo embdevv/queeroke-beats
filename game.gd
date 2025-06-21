@@ -20,10 +20,10 @@ var pre_start_length
 
 var data_ready = false
 
-var track_scn = preload("res://track/track.tscn")
 var track
+const track_scn = preload("res://scenes/ui/track.tscn")
+const music_scn = preload("res://scenes/music.tscn")
 
-var music_scn = preload("res://music.tscn")
 var music
 
 var start_bar_index = 0
@@ -34,14 +34,20 @@ func _ready():
 	setup()
 	
 func load_map():
-	var file = File.new()
-	file.open(map_path, File.READ)
+	var file = FileAccess.open(map_path, FileAccess.READ)
+	if file == null:
+		push_error("Failed to open file: %s" % map_path)
+		return null
 	var content = file.get_as_text()
 	file.close()
-	var test_json_conv = JSON.new()
-	test_json_conv.parse(content).get_data()
-	return test_json_conv.get_data()
+   
+	var json = JSON.parse_string(content)
+	if json.error != OK:
+		push_error("Failed to parse JSON: %s" % json.error_string)
+		return null
 	
+	return json.result
+
 func setup():
 	print("start at:", start_bar_index)
 	tempo = int(map.tempo)
@@ -51,13 +57,11 @@ func setup():
 	note_scale = bar_length_in_m/float(4*400)
 	start_pos_in_sec = (float(map.start_pos)/400.0) * quarter_time_in_sec
 	start_pos_in_px = start_pos_in_sec * speed
-	#pre_start_length = bar_length_in_m # bars count #bar_length_in_m
 	
 	music = music_scn.instantiate()
 	music.audio = audio
 	music.speed = speed
 	music.tempo = tempo 
-	# should include start_pos_in_px (related to start_pos_in_sec)
 	music.pre_start_length = 1600 + start_pos_in_px 
 	# include start_pos_in_sec here
 	music.start_pos_in_sec = start_pos_in_sec + start_bar_index*4*quarter_time_in_sec # we confirm that all bars have fixed length - 4 quarters

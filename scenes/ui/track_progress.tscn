@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://btrxxoy1oev2j"]
 
-[ext_resource type="Script" uid="uid://b3p36ggs50yi8" path="res://track_progress.gd" id="1_0c3qo"]
+[ext_resource type="Script" uid="uid://b3p36ggs50yi8" path="res://scripts/track_progress.gd" id="1_0c3qo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0c3qo"]
 
