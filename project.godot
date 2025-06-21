@@ -16,6 +16,10 @@ run/main_scene="uid://bfsvglxq476jx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/Rim.svg"
 
+[autoload]
+
+GameEvent="*res://game_event.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
