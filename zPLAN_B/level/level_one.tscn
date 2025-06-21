@@ -40,18 +40,22 @@ offset_bottom = 371.0
 
 [node name="KeyListenA" parent="." instance=ExtResource("1_bhnhe")]
 position = Vector2(-151, 330)
+key_name = "button_A"
 
 [node name="KeyListenS" parent="." instance=ExtResource("1_bhnhe")]
 position = Vector2(-47, 330)
 key_name = "button_S"
+array_mum = 1
 
 [node name="KeyListenK" parent="." instance=ExtResource("1_bhnhe")]
 position = Vector2(63, 330)
 key_name = "button_K"
+array_mum = 2
 
 [node name="KeyListenL" parent="." instance=ExtResource("1_bhnhe")]
 position = Vector2(168, 330)
 key_name = "button_L"
+array_mum = 3
 
 [node name="ScorePressText" parent="." instance=ExtResource("4_1mhk1")]
 

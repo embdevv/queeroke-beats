@@ -21,6 +21,7 @@ var ok_press_score         : float = 20
 
 func _ready():
 	Signals.CreateFallingKey.connect(createFallingKey)
+	
 
 func _process(delta):
 	
