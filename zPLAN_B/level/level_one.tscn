@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://7lsk5x1e5tvt"]
+[gd_scene load_steps=6 format=3 uid="uid://7lsk5x1e5tvt"]
 
 [ext_resource type="PackedScene" uid="uid://bn06sx31q13qg" path="res://zPLAN_B/core/key_listener.tscn" id="1_bhnhe"]
 [ext_resource type="Texture2D" uid="uid://cgevjkjq4tewy" path="res://assets/levelOne/Frame1.PNG" id="1_txpru"]
 [ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="2_6kkp2"]
-[ext_resource type="PackedScene" uid="uid://dhfodjghtuo6k" path="res://zPLAN_B/core/falling_key.tscn" id="4_6kkp2"]
+[ext_resource type="PackedScene" uid="uid://bk5as5rvn577a" path="res://zPLAN_B/core/score_press_text.tscn" id="4_1mhk1"]
+[ext_resource type="PackedScene" uid="uid://cl13um8la1ev5" path="res://zPLAN_B/core/game_ui.tscn" id="4_inj7o"]
 
 [node name="LevelOne" type="Node2D"]
 metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_horizontal_guides_ = [280.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-13, -10)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Frame1" type="Sprite2D" parent="."]
-position = Vector2(-135, 2)
-scale = Vector2(0.161525, 0.161908)
+position = Vector2(-159, -7)
+scale = Vector2(0.18, 0.18)
 texture = ExtResource("1_txpru")
 
 [node name="Frame2" type="Sprite2D" parent="."]
@@ -24,31 +27,40 @@ texture = ExtResource("2_6kkp2")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -222.0
-offset_top = -324.0
+offset_top = -369.0
 offset_right = 223.0
-offset_bottom = 321.0
+offset_bottom = 348.0
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = -224.0
-offset_top = 229.0
+offset_top = 219.0
 offset_right = 223.0
 offset_bottom = 321.0
+
+[node name="KeyListener2" parent="." instance=ExtResource("1_bhnhe")]
+position = Vector2(-52, 280)
+key_name = "button_S"
+
+[node name="KeyListener3" parent="." instance=ExtResource("1_bhnhe")]
+position = Vector2(58, 280)
+key_name = "button_K"
+
+[node name="KeyListener4" parent="." instance=ExtResource("1_bhnhe")]
+position = Vector2(163, 280)
+key_name = "button_L"
 
 [node name="KeyListener" parent="." instance=ExtResource("1_bhnhe")]
 position = Vector2(-156, 280)
 key_name = "button_A"
 
-[node name="KeyListener2" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(-48, 280)
-key_name = "button_S"
+[node name="GameUI" parent="." instance=ExtResource("4_inj7o")]
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 4.0
+offset_bottom = 39.0
 
-[node name="KeyListener3" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(58, 279)
-key_name = "button_K"
-
-[node name="KeyListener4" parent="." instance=ExtResource("1_bhnhe")]
-position = Vector2(163, 279)
-key_name = "button_L"
-
-[node name="FallingKey" parent="." instance=ExtResource("4_6kkp2")]
-position = Vector2(-155, -379)
+[node name="ScorePressText" parent="." instance=ExtResource("4_1mhk1")]
+offset_left = -8.0
+offset_top = 133.0
+offset_right = -8.0
+offset_bottom = 133.0

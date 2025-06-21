@@ -19,6 +19,7 @@ config/icon="res://assets/Rim.svg"
 [autoload]
 
 GameEvent="*res://game_event.gd"
+Signals="*res://signals.gd"
 
 [display]
 
