@@ -23,7 +23,8 @@ Signals="*res://signals.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [dotnet]
 

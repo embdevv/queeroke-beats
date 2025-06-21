@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk5as5rvn577a"]
+[gd_scene load_steps=10 format=3 uid="uid://bk5as5rvn577a"]
 
 [ext_resource type="Script" uid="uid://oq0tva61mwte" path="res://zPLAN_B/core/score_press_text.gd" id="1_ol8gf"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="1_ut7dt"]
@@ -10,13 +10,18 @@ colors = PackedColorArray(0, 0.834722, 0.990806, 1, 0.868626, 0.4608, 0.811474, 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vi2f2"]
 gradient = SubResource("Gradient_ol8gf")
 
+[sub_resource type="Gradient" id="Gradient_vi2f2"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_utplp"]
+gradient = SubResource("Gradient_vi2f2")
+
 [sub_resource type="Animation" id="Animation_vi2f2"]
 resource_name = "fall"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/path = NodePath("ScoreLevelText:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/path = NodePath("ScoreLevelText:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -57,7 +62,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/path = NodePath("ScoreLevelText:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,7 +74,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/path = NodePath("ScoreLevelText:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -95,7 +100,7 @@ grow_vertical = 2
 scale = Vector2(1.00579, 1.03832)
 script = ExtResource("1_ol8gf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="ScoreLevelText" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = -107.0
 offset_top = 10.0
@@ -112,14 +117,22 @@ theme_override_constants/line_separation = 0
 theme_override_fonts/normal_font = ExtResource("1_ut7dt")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]PERFECT"
+text = "[center]OKAY"
 fit_content = true
 
-[node name="TRANS_LIGHT" type="PointLight2D" parent="RichTextLabel"]
+[node name="TRANS_LIGHT" type="PointLight2D" parent="ScoreLevelText"]
+visible = false
 position = Vector2(108.988, 31.4129)
 scale = Vector2(1, 54.7709)
 blend_mode = 2
 texture = SubResource("GradientTexture1D_vi2f2")
+
+[node name="Shine_Light" type="PointLight2D" parent="ScoreLevelText"]
+visible = false
+position = Vector2(111.971, 33.339)
+rotation = -0.404202
+scale = Vector2(1.45781, 32.876)
+texture = SubResource("GradientTexture1D_utplp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
