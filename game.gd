@@ -2,8 +2,8 @@ extends Node2D
 
 var audio
 var map
-var audio_path = "res://LEVELS/MUSIC/hansatom_-_Vitamins_CC_BY_NC.ogg"
-var map_path = "res://LEVELS/MUSIC/hansatom_-_Vitamins_CC_BY_NC.mboy" 
+var audio_path = "res://LEVELS/MUSIC/LevelOne.ogg"
+var map_path = "res://LEVELS/MUSIC/LevelOneMap.mboy" 
 
 
 #var audio_path = "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.ogg"
