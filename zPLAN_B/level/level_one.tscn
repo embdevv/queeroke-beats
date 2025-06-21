@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bn06sx31q13qg" path="res://zPLAN_B/core/key_listener.tscn" id="1_bhnhe"]
 [ext_resource type="Texture2D" uid="uid://cgevjkjq4tewy" path="res://assets/levelOne/Frame1.PNG" id="1_txpru"]
 [ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="2_6kkp2"]
-[ext_resource type="PackedScene" uid="uid://bk5as5rvn577a" path="res://zPLAN_B/core/score_press_text.tscn" id="4_1mhk1"]
-[ext_resource type="PackedScene" uid="uid://cl13um8la1ev5" path="res://zPLAN_B/core/game_ui.tscn" id="4_inj7o"]
+[ext_resource type="PackedScene" path="res://zPLAN_B/core/score_press_text.tscn" id="4_1mhk1"]
+[ext_resource type="PackedScene" path="res://zPLAN_B/core/game_ui.tscn" id="4_inj7o"]
 
 [node name="LevelOne" type="Node2D"]
 metadata/_edit_vertical_guides_ = [0.0]
