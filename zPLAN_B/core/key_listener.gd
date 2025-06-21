@@ -9,10 +9,10 @@ var frame := 0
 var falling_key_queue = []
 
 # OFF-SET
-var perfect_press_threshold: float = 50
-var great_press_threshold  : float = 60
-var good_press_threshold   : float = 70
-var ok_press_threshold     : float = 80
+var perfect_press_threshold: float = 20
+var great_press_threshold  : float = 30
+var good_press_threshold   : float = 40
+var ok_press_threshold     : float = 50
 
 var perfect_press_score    : float = 250
 var great_press_score      : float = 100
