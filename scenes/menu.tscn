@@ -123,6 +123,7 @@ theme_override_fonts/font = ExtResource("3_g3eks")
 text = "QUIT"
 
 [node name="Options" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -300,6 +301,7 @@ theme_override_font_sizes/font_size = 38
 text = "Calibration"
 
 [node name="Calibration" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

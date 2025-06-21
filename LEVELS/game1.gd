@@ -1,7 +1,9 @@
 extends Node2D
 
+@export var level_song: AudioStreamPlayer
 @export var frame_1: Sprite2D
 @export var frame_2: Sprite2D
+
 
 #@onready var frame_1: Sprite2D = $Frame1
 #@onready var frame_2: Sprite2D = $Frame2
