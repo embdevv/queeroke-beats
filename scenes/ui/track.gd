@@ -1,79 +1,313 @@
 extends Node2D
 
-var map_bar_index = -1  # track exact bar index 
+var map_bar_index = -1  
 const NOTE_SCENE = preload("res://notes/normal_note.tscn")
 var bar_scn = preload("res://scenes/bar/bar.tscn")
-#var collect_anim = preload("res://note/collect_note_anim.tscn")
-#var pile_anim = preload("res://track/pile_anim.tscn")
-@onready var bars_node = $Bars
+@export var falling_key = preload("res://scenes/ui/falling_key.tscn")
+var falling_key_queue = []
 
 var bars = []
 var notes_count = 0
 var start_pos_in_sec = 0.0
 var quarter_time_in_sec = 0.0
 
-var bars_data = [
-		{
-			"index": 0,
-			"quarters_count": 4,
-			"notes": []
-		}, 
-		{
-			"index": 1,
-			"quarters_count": 4,
-			"notes": []
-		}, 
-		{
-			"index": 2,
-			"quarters_count": 4,
-			"notes": [{
-				"pos": 400,
-				"len": 100,
-				"markers": ["d"]
-			}]
-		}, 
-		{
-			"index": 3,
-			"quarters_count": 4,
-			"notes": [{
-				"pos": 800,
-				"len": 100,
-				"markers": []
-			}]
-		}, 
-		{
-			"index": 4,
-			"quarters_count": 4,
-			"notes": [{
-				"pos": 0,
-				"len": 100,
-				"markers": ["d"]
-			}, {
-				"pos": 300,
-				"len": 100,
-				"markers": ["DD"]
-			}]
-		}, 
-		{
-			"index": 5,
-			"quarters_count": 4,
-			"notes": [{
-				"pos": 0,
-				"len": 100,
-				"markers": ["d"]
-			}, {
-				"pos": 300,
-				"len": 100,
-				"markers": ["KK"]
-			}, {
-				"pos": 1000,
-				"len": 100,
-				"markers": []
-			}]
-		}
-	]
+var bars_data = [{
+					"index": 0,
+					"quarters_count": 4,
+					"notes": []
+				},
+				{
+					"index": 1,
+					"quarters_count": 4,
+					"notes": []
+				},
+				{
+					"index": 2,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 400,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1200,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 3,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 400,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1200,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 4,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 400,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1200,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 5,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 400,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1100,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1400,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 6,
+					"quarters_count": 4,
+					"notes": []
+				},
+				{
+					"index": 7,
+					"quarters_count": 4,
+					"notes": []
+				},
+				{
+					"index": 8,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 200,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 500,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 600,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1000,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1300,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1400,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 9,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 200,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 500,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 600,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1100,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1400,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 10,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 200,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 500,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 600,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1000,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1300,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1400,
+							"len": 100,
+							"markers": []
+						}
+					]
+				},
+				{
+					"index": 11,
+					"quarters_count": 4,
+					"notes": [
+						{
+							"pos": 0,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 200,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 500,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 600,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 800,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1100,
+							"len": 100,
+							"markers": []
+						},
+						{
+							"pos": 1400,
+							"len": 100,
+							"markers": []
+						}
+					]
+				}
+			]
 
-
+var time_begin
+var time_delay
 var note_scale = 0.5
 var speed = 800
 #var pre_start_length = 0
@@ -84,37 +318,9 @@ var curr_bar_index = 0
 var colliding_notes = []
 
 func _ready():
-	# skip bars, but update curr_bar_x	
-#	if curr_bar_index > 0:
-#		for i in range(0, curr_bar_index):
-#			#var bar_length = bars_data[i].quarters_count * 400 * note_scale
-#			#bars_node.position.x -= bar_length
-#
-#			var bar = bar_scn.instance()
-#			bar.index = -1
-#			bar.position = Vector2(curr_bar_x, 80)
-#			bar.note_scale = note_scale
-#			bar.notes_data = []
-#			bar.length = 4 * 400 * note_scale
-#
-#			bars.append(bar)
-#			bars_node.add_child(bar)
-#
-#			curr_bar_x += bar.length
-#			bars_node.position.x -= bar.length
-	
-	
-	#if pre_start_length > 0:
-	#	for i in range(0, pre_start_length):	
-	#		bars_data.push_front({"index": -1, "quarters_count": 4, "notes": []})
-		  
-		
-	#  add bars
 	for i in range(0, 4):
 		add_bar()
 		
-	#bars_node.position.x -= 4 * 400 * note_scale * curr_bar_index
-	
 	var extended = false
 	for bar in bars_data:
 		for note in bar.notes:
@@ -130,6 +336,7 @@ func _ready():
 	$TrackProgress.notes_count = notes_count
 		
 	
+
 func add_bar():
 	#print("add bar")
 	if curr_bar_index >= bars_data.size(): return
@@ -149,11 +356,13 @@ func add_bar():
 	curr_bar_x += bar.length
 	curr_bar_index += 1
 
-func spawn_note(note):
-	var instance = NOTE_SCENE.instantiate()
-	instance.position = Vector2(note.pos * note_scale + curr_bar_x, 80) # Adjust y as needed
-	add_child(instance)
-	
+func createFallingKey():
+	var beat_inst = falling_key.instantiate()
+	add_child(beat_inst)
+	# Set position based on your logic, e.g., start at curr_bar_x + some offset
+	beat_inst.position = Vector2(curr_bar_x, 80)
+	falling_key_queue.push_back(beat_inst)
+
 
 func process_with_time(music_time, delta):
 	for bar in bars_data:
@@ -163,7 +372,7 @@ func process_with_time(music_time, delta):
 		for note in bar.notes:
 			var note_time = bar_time + (note.pos / 400.0) * quarter_time_in_sec
 			if note_time <= music_time + 2.0 and not note.has("spawned"):
-				spawn_note(note)
+				createFallingKey()
 				note["spawned"] = true  
 
 
@@ -174,22 +383,16 @@ func remove_bar(bar):
 
 func _on_Picker_area_entered(area):
 	if area.is_in_group("note"):
-		#area.get_parent().is_colliding = true
 		colliding_notes.push_back(area.get_parent())
-		#area.get_parent().queue_free()
-		#print(area.get_parent())
 
 func _on_Picker_area_exited(area):
 	if area.is_in_group("note"):
-		#area.get_parent().is_colliding = false
 		
 		for n in colliding_notes:
 			if n == area.get_parent():
 				n.fail()				
 				colliding_notes.erase(n)
 				
-		#area.get_parent().queue_free()
-		#print(area.get_parent())
 		
 func on_red_left_pressed():
 	#print("RL")

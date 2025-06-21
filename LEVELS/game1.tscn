@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b1p3we54i6nyg" path="res://LEVELS/MUSIC/LevelOne.ogg" id="2_q7ts5"]
 [ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="3_q7ts5"]
 [ext_resource type="PackedScene" uid="uid://dj4vm4aw3qy1y" path="res://scenes/ui/track.tscn" id="5_q7ts5"]
-[ext_resource type="PackedScene" path="res://scenes/ui/beatListener.tscn" id="6_a1isp"]
+[ext_resource type="PackedScene" uid="uid://c5tntnhn81fjv" path="res://scenes/ui/beatListener.tscn" id="6_a1isp"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="6_vstu5"]
 [ext_resource type="PackedScene" uid="uid://ti7hl3sam76h" path="res://scenes/ui/falling_key.tscn" id="8_32v03"]
 

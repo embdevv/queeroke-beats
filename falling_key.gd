@@ -3,13 +3,15 @@ extends Node2D
 @export var speed: float = 500.0
 var init_x_pos: float = 545.0
 
+var has_passed := false
+
 func _init():
 	set_process(false)
 
 func _process(delta):
 	global_position += Vector2(-speed * delta, 0)
 	
-	if global_position.x > 80.0 and not $Timer.is_stopped():
+	if global_position.x > -500.0 and not $Timer.is_stopped():
 		print($Timer.wait_time - $Timer.time_left)
 		$Timer.stop()
 

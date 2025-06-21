@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn06sx31q13qg"]
+
+[ext_resource type="Script" uid="uid://b0205cayncyy3" path="res://zPLAN_B/core/key_listener.gd" id="1_f2seh"]
+[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/blue_sprite.PNG" id="1_sm1l4"]
+
+[node name="KeyListener" type="Node2D"]
+script = ExtResource("1_f2seh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_sm1l4")

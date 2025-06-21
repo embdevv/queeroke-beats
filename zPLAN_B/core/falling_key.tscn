@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhfodjghtuo6k"]
+
+[ext_resource type="Script" uid="uid://c3wibs7imsbl3" path="res://zPLAN_B/core/falling_key.gd" id="1_mfcaf"]
+[ext_resource type="Texture2D" uid="uid://copc15asbqdjk" path="res://assets/blue_sprite.PNG" id="1_obuj7"]
+
+[node name="FallingKey" type="Node2D"]
+script = ExtResource("1_mfcaf")
+
+[node name="FallingKey" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_obuj7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
