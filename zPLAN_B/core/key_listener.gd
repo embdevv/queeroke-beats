@@ -55,6 +55,9 @@ func _process(delta):
 				Signals.IncrementScore.emit(ok_press_score)
 				press_score_text = "OKAY"
 				Signals.IncrementCombo.emit()
+			elif distance_from_pass > abs(key_to_pop.pass_threshold - key_to_pop.global_position.y):
+				press_score_text = "MISS"
+				Signals.ResetCombo.emit()
 			else:
 				press_score_text = "MISS"
 				Signals.ResetCombo.emit()
