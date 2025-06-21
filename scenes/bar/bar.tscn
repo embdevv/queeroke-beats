@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d11is1pgxb27h"]
 
-[ext_resource type="Script" path="res://scripts/bar.gd" id="1_iqaid"]
+[ext_resource type="Script" uid="uid://bs5g56h2ta4tt" path="res://scripts/bar.gd" id="1_iqaid"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_iqaid"]
 
