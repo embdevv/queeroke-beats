@@ -21,11 +21,13 @@ scale = Vector2(2.17969, 2.02344)
 modulate = Color(0.923597, 0.902918, 0.553057, 1)
 position = Vector2(4195, 1215)
 scale = Vector2(0.420407, 0.554327)
+texture = null
 
 [node name="Rim" parent="." instance=ExtResource("2_t18mc")]
 modulate = Color(0.0296923, 0.65552, 0.576131, 1)
 position = Vector2(4836, 1226)
 scale = Vector2(0.420407, 0.554327)
+texture = null
 
 [node name="SpawnTimer" type="Timer" parent="."]
 one_shot = true
