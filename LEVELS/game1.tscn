@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddp7yrqls3spu"]
+
+[ext_resource type="Script" uid="uid://bwst61jplarcf" path="res://LEVELS/game1.gd" id="1_4ctl1"]
+[ext_resource type="Texture2D" uid="uid://cgevjkjq4tewy" path="res://assets/levelOne/Frame1.PNG" id="2_kn33y"]
+[ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="3_q7ts5"]
+
+[node name="Game1" type="Node2D" node_paths=PackedStringArray("frame_1", "frame_2")]
+script = ExtResource("1_4ctl1")
+frame_1 = NodePath("Frame1")
+frame_2 = NodePath("Frame2")
+
+[node name="Frame1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(443.75, 324.5)
+scale = Vector2(0.161545, 0.16175)
+texture = ExtResource("2_kn33y")
+
+[node name="Frame2" type="Sprite2D" parent="."]
+position = Vector2(443.75, 324.5)
+scale = Vector2(0.161545, 0.16175)
+texture = ExtResource("3_q7ts5")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -1.0
+offset_top = 568.0
+offset_right = 1153.0
+offset_bottom = 651.0
