@@ -1,3 +1,3 @@
-[gd_scene format=3 uid="uid://2d72vj2y38du"]
+[gd_scene load_steps=0 format=3 uid="uid://2d72vj2y38du"]
 
 [node name="BeatKey" type="Node2D"]
