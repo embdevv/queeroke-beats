@@ -34,7 +34,6 @@ project/assembly_name="queeroke beats"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://notes/": "red",
 "res://scenes/": "blue",
 "res://scripts/": "purple",
 "res://zPLAN_B/": "gray"

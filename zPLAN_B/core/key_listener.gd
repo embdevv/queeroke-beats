@@ -18,9 +18,13 @@ var great_press_score      : float = 100
 var good_press_score       : float = 50
 var ok_press_score         : float = 20
 
+func _ready():
+	Signals.CreateFallingKey.connect(createFallingKey)
 
 func _process(delta):
 	
+	if Input.is_action_just_pressed(key_name):
+		Signals.KeyListenerPress.emit(key_name, frame)
 	if falling_key_queue.size() > 0:
 		
 		if falling_key_queue.front().has_passed:
@@ -62,14 +66,15 @@ func _process(delta):
 			
 
 	
-func createFallingKey():
-	var fk_inst = falling_key.instantiate()
-	get_tree().get_root().call_deferred("add_child", fk_inst)
-	fk_inst.Setup(position.x, frame + 4)
+func createFallingKey(button_name: String):
+	if button_name == key_name:
+		var fk_inst = falling_key.instantiate()
+		get_tree().get_root().call_deferred("add_child", fk_inst)
+		fk_inst.Setup(position.x, frame + 4)
 	
-	falling_key_queue.push_back(fk_inst)
+		falling_key_queue.push_back(fk_inst)
 
 func _on_random_spawn_timer_timeout() -> void:
-	createFallingKey()
+	#createFallingKey()
 	$randomSpawnTimer.wait_time = randf_range(0.4, 3)
 	$randomSpawnTimer.start()
