@@ -29,13 +29,15 @@ text = "[center]0 pts"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 377.0
-offset_top = 22.0
-offset_right = 735.0
-offset_bottom = 146.0
+offset_left = 375.0
+offset_top = 1.0
+offset_right = 733.0
+offset_bottom = 125.0
 scale = Vector2(1.2, 1.2)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("1_1xedn")
@@ -45,3 +47,5 @@ text = "[center]0x COMBO"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

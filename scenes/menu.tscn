@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=21 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://bnrtktp44yk3n" path="res://LEVELS/MUSIC/startingScreen.mp3" id="2_i6lef"]
 [ext_resource type="Texture2D" uid="uid://c3fk3l6nd1t4t" path="res://zPLAN_B/level/star effect.png" id="3_7jp70"]
 [ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://beftrfexhguxm" path="res://zPLAN_B/level/miniscene2_wawa.png" id="3_mxgkd"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://dnj4hs8uc305d" path="res://zPLAN_B/level/butterfly effect.png" id="4_mxgkd"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
@@ -49,6 +50,7 @@ script = ExtResource("1_yqeox")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_i6lef")
+volume_db = -15.0
 autoplay = true
 
 [node name="Main" type="Panel" parent="."]
@@ -66,25 +68,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StarEffect" type="Sprite2D" parent="Main"]
-position = Vector2(875, 434)
-scale = Vector2(1.125, 1.18148)
-texture = ExtResource("3_7jp70")
-
-[node name="ButterflyEffect" type="Sprite2D" parent="Main"]
-position = Vector2(276, 321)
-scale = Vector2(0.68125, 0.744444)
-texture = ExtResource("4_mxgkd")
-
-[node name="Panel" type="Panel" parent="Main"]
-layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 641.0
+position = Vector2(581, 310)
+scale = Vector2(0.565365, 0.509722)
+texture = ExtResource("3_mxgkd")
 
 [node name="bg" type="Sprite2D" parent="Main"]
 modulate = Color(0.898157, 0.821479, 0.963462, 1)
 position = Vector2(581, 321)
 scale = Vector2(0.602083, 0.596296)
 texture = ExtResource("5_g6gyw")
+
+[node name="Panel" type="Panel" parent="Main"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 641.0
 
 [node name="Title" type="RichTextLabel" parent="Main"]
 layout_mode = 1
@@ -108,10 +105,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -300.0
-offset_top = 175.0
-offset_right = 314.0
-offset_bottom = 220.0
+offset_left = -323.0
+offset_top = 176.0
+offset_right = 291.0
+offset_bottom = 221.0
 grow_horizontal = 2
 scale = Vector2(1.06199, 0.846168)
 theme_override_fonts/normal_font = ExtResource("3_con2f")
@@ -222,7 +219,18 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_i42df")
 theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "QUIT"
 
+[node name="ButterflyEffect" type="Sprite2D" parent="Main/VBoxContainer"]
+position = Vector2(-128.756, 27.4286)
+scale = Vector2(0.291411, 0.319048)
+texture = ExtResource("4_mxgkd")
+
+[node name="StarEffect2" type="Sprite2D" parent="."]
+position = Vector2(1048, 577)
+scale = Vector2(0.7, 0.707407)
+texture = ExtResource("3_7jp70")
+
 [node name="Options" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

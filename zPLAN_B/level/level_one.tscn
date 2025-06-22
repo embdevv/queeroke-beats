@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://7lsk5x1e5tvt"]
+[gd_scene load_steps=11 format=3 uid="uid://7lsk5x1e5tvt"]
 
 [ext_resource type="PackedScene" uid="uid://bn06sx31q13qg" path="res://zPLAN_B/core/key_listener.tscn" id="1_bhnhe"]
 [ext_resource type="Script" uid="uid://funiuqohxth5" path="res://zPLAN_B/level/level_one.gd" id="1_ppcum"]
 [ext_resource type="Texture2D" uid="uid://blamsjl5nv80c" path="res://zPLAN_B/level/Newframe1.PNG" id="2_ppcum"]
+[ext_resource type="VideoStream" uid="uid://by82fruvs0rwn" path="res://assets/OB_TEST.ogv" id="2_vb6a7"]
 [ext_resource type="Texture2D" uid="uid://cywxdq8xp36fh" path="res://zPLAN_B/level/Newframe2.PNG" id="3_52oxu"]
 [ext_resource type="PackedScene" uid="uid://bk5as5rvn577a" path="res://zPLAN_B/core/score_press_text.tscn" id="4_1mhk1"]
 [ext_resource type="PackedScene" uid="uid://cl13um8la1ev5" path="res://zPLAN_B/core/game_ui.tscn" id="4_inj7o"]
@@ -19,10 +20,19 @@ metadata/_edit_horizontal_guides_ = [324.0]
 position = Vector2(-9, 81)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -582.0
+offset_top = -246.0
+offset_right = 1338.0
+offset_bottom = 834.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("2_vb6a7")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
 
 [node name="Frame1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-140, 85)
 scale = Vector2(0.162909, 0.16)
 texture = ExtResource("2_ppcum")
@@ -65,6 +75,7 @@ key_name = "button_L"
 array_mum = 3
 
 [node name="ScorePressText" parent="." instance=ExtResource("4_1mhk1")]
+visible = false
 
 [node name="GameUI" parent="." instance=ExtResource("4_inj7o")]
 offset_left = 1.0
