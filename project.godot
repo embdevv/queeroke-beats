@@ -12,7 +12,7 @@ config_version=5
 
 config/name="queeroke beats"
 config/version="1.0"
-run/main_scene="uid://7lsk5x1e5tvt"
+run/main_scene="uid://bfsvglxq476jx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/Rim.svg"
 

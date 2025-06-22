@@ -16,29 +16,32 @@ script = ExtResource("1_jaxbq")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 530.0
-offset_top = 65.0
-offset_right = 697.0
-offset_bottom = 158.0
+offset_left = 405.0
+offset_top = 66.0
+offset_right = 765.0
+offset_bottom = 159.0
+scale = Vector2(1.00377, 1.03024)
 theme_override_constants/outline_size = 13
 theme_override_fonts/normal_font = ExtResource("1_1xedn")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]0 pts"
+fit_content = true
+scroll_active = false
 autowrap_mode = 0
 
 [node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 500.0
-offset_top = 21.0
-offset_right = 696.0
-offset_bottom = 145.0
+offset_left = 377.0
+offset_top = 22.0
+offset_right = 735.0
+offset_bottom = 146.0
 scale = Vector2(1.2, 1.2)
 theme_override_constants/outline_size = 15
 theme_override_fonts/normal_font = ExtResource("1_1xedn")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[center]0X COMBO"
+text = "[center]0x COMBO"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

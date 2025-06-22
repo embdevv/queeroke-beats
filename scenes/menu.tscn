@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfsvglxq476jx"]
+[gd_scene load_steps=20 format=3 uid="uid://bfsvglxq476jx"]
 
 [ext_resource type="Script" uid="uid://c4iir4n8mxyja" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="AudioStream" uid="uid://bnrtktp44yk3n" path="res://LEVELS/MUSIC/startingScreen.mp3" id="2_i6lef"]
-[ext_resource type="Texture2D" uid="uid://fpexqwcxwdit" path="res://assets/Rim.svg" id="2_vjb58"]
+[ext_resource type="Texture2D" uid="uid://c3fk3l6nd1t4t" path="res://zPLAN_B/level/star effect.png" id="3_7jp70"]
 [ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="3_con2f"]
 [ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="3_g3eks"]
 [ext_resource type="Theme" uid="uid://brhbv8ijqk3am" path="res://assets/mainTheme.tres" id="4_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dnj4hs8uc305d" path="res://zPLAN_B/level/butterfly effect.png" id="4_mxgkd"]
 [ext_resource type="FontFile" uid="uid://qrhjhbr2uwy8" path="res://assets/fonts/LTKaraoke-Regular.ttf" id="5_g3eks"]
+[ext_resource type="Texture2D" uid="uid://g1hsq7ucv6he" path="res://zPLAN_B/level/extra.png" id="5_g6gyw"]
 [ext_resource type="Script" uid="uid://170bmehw8af7" path="res://scripts/master_slider.gd" id="7_v86rl"]
 [ext_resource type="Texture2D" uid="uid://bsjcn0a3o5hyo" path="res://assets/output-onlinepngtools.png" id="8_70i5f"]
 [ext_resource type="Script" uid="uid://bl6c81ro0xwly" path="res://scripts/resolution_opts.gd" id="9_i6lef"]
@@ -24,10 +26,6 @@ expand_margin_bottom = 15.0
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_70i5f"]
 color = Color(0.398642, 0.587427, 1, 1)
 thickness = 8
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ytvr"]
-color = Color(1, 1, 1, 1)
-thickness = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cdou"]
 texture = ExtResource("11_ufwb2")
@@ -67,15 +65,26 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bg" type="Sprite2D" parent="Main"]
-position = Vector2(575, 323)
-scale = Vector2(8.95313, 4.98438)
-texture = ExtResource("2_vjb58")
+[node name="StarEffect" type="Sprite2D" parent="Main"]
+position = Vector2(875, 434)
+scale = Vector2(1.125, 1.18148)
+texture = ExtResource("3_7jp70")
+
+[node name="ButterflyEffect" type="Sprite2D" parent="Main"]
+position = Vector2(276, 321)
+scale = Vector2(0.68125, 0.744444)
+texture = ExtResource("4_mxgkd")
 
 [node name="Panel" type="Panel" parent="Main"]
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 641.0
+
+[node name="bg" type="Sprite2D" parent="Main"]
+modulate = Color(0.898157, 0.821479, 0.963462, 1)
+position = Vector2(581, 321)
+scale = Vector2(0.602083, 0.596296)
+texture = ExtResource("5_g6gyw")
 
 [node name="Title" type="RichTextLabel" parent="Main"]
 layout_mode = 1
@@ -91,7 +100,7 @@ scale = Vector2(1.06199, 0.846168)
 theme_override_fonts/normal_font = ExtResource("3_g3eks")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[wave] [rainbow] Queer-OKE! beats"
+text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=0.5 ] Queer-OKE! beats [/rainbow]"
 fit_content = true
 
 [node name="Subtitle" type="RichTextLabel" parent="Main"]
@@ -214,7 +223,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_i42df")
 text = "QUIT"
 
 [node name="Options" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -265,10 +273,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -494.5
-offset_top = 134.0
-offset_right = -98.5
-offset_bottom = 187.0
+offset_left = -500.5
+offset_top = 156.0
+offset_right = -104.5
+offset_bottom = 209.0
 grow_horizontal = 2
 theme = ExtResource("4_4ytvr")
 theme_override_fonts/font = ExtResource("5_g3eks")
@@ -306,63 +314,15 @@ theme_override_font_sizes/font_size = 38
 text = "Options"
 horizontal_alignment = 1
 
-[node name="musicVolume" type="Label" parent="Options"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -496.5
-offset_top = 190.0
-offset_right = -100.5
-offset_bottom = 243.0
-grow_horizontal = 2
-theme = ExtResource("4_4ytvr")
-theme_override_fonts/font = ExtResource("5_g3eks")
-theme_override_font_sizes/font_size = 38
-text = "Music Volume"
-horizontal_alignment = 1
-
-[node name="musicSlider" type="HSlider" parent="Options/musicVolume"]
-layout_mode = 0
-offset_left = 330.0
-offset_right = 721.0
-offset_bottom = 27.0
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-value = 50.0
-
-[node name="sfxVolume" type="Label" parent="Options"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -495.5
-offset_top = 247.0
-offset_right = -99.5
-offset_bottom = 300.0
-grow_horizontal = 2
-theme = ExtResource("4_4ytvr")
-theme_override_fonts/font = ExtResource("5_g3eks")
-theme_override_font_sizes/font_size = 38
-text = "Sfx Volume"
-horizontal_alignment = 1
-
-[node name="sfxSlider" type="HSlider" parent="Options/sfxVolume"]
-layout_mode = 0
-offset_left = 330.0
-offset_right = 721.0
-offset_bottom = 27.0
-theme_override_styles/slider = SubResource("StyleBoxLine_4ytvr")
-value = 50.0
-
 [node name="resolutionLabel" type="Label" parent="Options"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -501.5
-offset_top = 302.0
-offset_right = -105.5
-offset_bottom = 355.0
+offset_left = -515.5
+offset_top = 218.0
+offset_right = -119.5
+offset_bottom = 271.0
 grow_horizontal = 2
 theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
@@ -400,10 +360,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -500.5
-offset_top = 354.0
-offset_right = -104.5
-offset_bottom = 407.0
+offset_left = -507.5
+offset_top = 288.0
+offset_right = -111.5
+offset_bottom = 341.0
 grow_horizontal = 2
 theme = ExtResource("4_4ytvr")
 theme_override_font_sizes/font_size = 38
@@ -417,10 +377,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -158.5
-offset_top = -106.0
-offset_right = 156.5
-offset_bottom = -35.0
+offset_left = -160.5
+offset_top = -124.0
+offset_right = 154.5
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_4ytvr")

@@ -3,7 +3,7 @@ extends Node2D
 
 # set this constant before game starts
 const in_edit_mode: bool = false
-var current_level_name = "TRANSition"
+var current_level_name = "WLW"
 
 var fk_fall_time: float = 2.2
 var fk_output_arr = [[], [], [], []]

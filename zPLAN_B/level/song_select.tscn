@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://xpjihty3irrv"]
+
+[ext_resource type="Script" uid="uid://u8v8npaar2i" path="res://song_select.gd" id="1_7kapl"]
+
+[node name="songSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kapl")
+
+[node name="level1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 183.0
+offset_right = 751.0
+offset_bottom = 234.0
+text = "phoebe"
+
+[node name="level2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 255.0
+offset_right = 751.0
+offset_bottom = 306.0
+text = "karl"
+
+[connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]
