@@ -37,12 +37,14 @@ func show_random_results():
 func show_actual_results():
 	score_label.text = "[center] %d" % GameStats.final_score
 	
-	if GameStats.final_score >= 20000:
+	if GameStats.final_score >= 50000:
 		result_label.text = "[center] [color=gold] Amazing! You are truly a star"
-	elif GameStats.final_score < 20000:
+	elif GameStats.final_score < 50000:
 		result_label.text = "[center] [color=silver] Good job! Let's aim for a higher one next time"
-	else:
+	elif GameStats.final_score <= 20000:
 		result_label.text = "[center][color=bronze]Keep practicing!"
+	else:
+		pass
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
