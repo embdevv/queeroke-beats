@@ -29,38 +29,58 @@ texture = ExtResource("3_h1iox")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 645.0
+offset_left = 76.0
+offset_top = 57.0
+offset_right = 552.0
+offset_bottom = 585.0
 
 [node name="level1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 230.0
-offset_right = 731.0
-offset_bottom = 281.0
+offset_left = 109.0
+offset_top = 186.0
+offset_right = 508.0
+offset_bottom = 262.0
 theme_override_fonts/font = ExtResource("4_rlqlx")
 theme_override_font_sizes/font_size = 35
 text = "new clothes"
 
 [node name="level2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 302.0
-offset_right = 731.0
-offset_bottom = 353.0
+offset_left = 108.0
+offset_top = 277.0
+offset_right = 507.0
+offset_bottom = 346.0
 theme_override_fonts/font = ExtResource("4_rlqlx")
 theme_override_font_sizes/font_size = 35
-text = "karl"
+text = "yearning"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = -3.0
-offset_top = 48.0
-offset_right = 1103.0
-offset_bottom = 129.0
+offset_left = -237.0
+offset_top = 81.0
+offset_right = 869.0
+offset_bottom = 162.0
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center]Select a level!"
+text = "[center]Choose a song"
+
+[node name="level3" type="Button" parent="."]
+offset_left = 108.0
+offset_top = 369.0
+offset_right = 508.0
+offset_bottom = 437.0
+theme_override_fonts/font = ExtResource("4_rlqlx")
+theme_override_font_sizes/font_size = 35
+text = "COMING SOON!"
+
+[node name="level4" type="Button" parent="."]
+offset_left = 103.0
+offset_top = 455.0
+offset_right = 509.0
+offset_bottom = 535.0
+theme_override_fonts/font = ExtResource("4_rlqlx")
+theme_override_font_sizes/font_size = 35
+text = "COMING SOON!"
 
 [connection signal="pressed" from="level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level2" to="." method="_on_level_2_pressed"]

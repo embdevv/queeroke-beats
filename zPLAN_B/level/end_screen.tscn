@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgxb5shgkjhlv"]
+
+[ext_resource type="Script" uid="uid://rjrr0k3i4pnf" path="res://zPLAN_B/level/end_screen.gd" id="1_b7243"]
+[ext_resource type="Texture2D" uid="uid://beftrfexhguxm" path="res://zPLAN_B/level/miniscene2_wawa.png" id="1_x3776"]
+[ext_resource type="FontFile" uid="uid://dun788piu40ik" path="res://assets/fonts/LTKaraoke-Bold.ttf" id="2_b7243"]
+
+[node name="end_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7243")
+
+[node name="Miniscene2Wawa" type="Sprite2D" parent="."]
+position = Vector2(585.5, 325)
+scale = Vector2(0.602604, 0.6)
+texture = ExtResource("1_x3776")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 1166.0
+offset_bottom = 649.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 131.0
+offset_right = 750.0
+offset_bottom = 201.0
+theme_override_fonts/normal_font = ExtResource("2_b7243")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Your Scored:
+"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 253.0
+offset_right = 744.0
+offset_bottom = 323.0
+theme_override_fonts/normal_font = ExtResource("2_b7243")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "
+"
+
+[node name="ComboLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 379.0
+offset_right = 744.0
+offset_bottom = 449.0
+theme_override_fonts/normal_font = ExtResource("2_b7243")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 42.0
+offset_right = 219.0
+offset_bottom = 116.0
+text = "BACK "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

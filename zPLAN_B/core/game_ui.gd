@@ -13,10 +13,13 @@ func _ready():
 
 func IncrementScore(incr: int):
 	score += incr
+	GameStats.final_score = score
 	score_label.text = "Score: %d" % score
 
 func IncrementCombo():
 	combo += 1
+	if combo > GameStats.final_combo:
+		GameStats.final_combo = combo
 	combo_label.text = "Combo: %dx" % combo
 
 func ResetCombo():

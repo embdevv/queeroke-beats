@@ -20,6 +20,7 @@ config/icon="res://assets/Rim.svg"
 
 GameEvent="*res://game_event.gd"
 Signals="*res://signals.gd"
+GameStats="*res://GameStats.gd"
 
 [display]
 
