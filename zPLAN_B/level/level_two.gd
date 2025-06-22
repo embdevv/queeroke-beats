@@ -50,6 +50,10 @@ func _ready():
 				SpawnFallingKey(button_name, delay)
 			
 			counter += 1
+
+func _process(delta):
+	if not music_player.playing:
+		get_tree().change_scene_to_file("res://zPLAN_B/level/end_screen.tscn")
 	
 func KeyListenerPress(button_name: String, array_num: int):
 	print(str(array_num) + " " + str($MusicPlayer.get_playback_position()))

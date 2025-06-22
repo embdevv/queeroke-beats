@@ -1,6 +1,7 @@
 extends Node2D
 @onready var music_player: AudioStreamPlayer2D = $MusicPlayer
 
+
 # set this constant before game starts
 const in_edit_mode: bool = false
 var current_level_name = "TRANSition"
@@ -50,6 +51,10 @@ func _ready():
 				SpawnFallingKey(button_name, delay)
 			
 			counter += 1
+
+func _process(delta):
+	if not music_player.playing:
+		get_tree().change_scene_to_file("res://zPLAN_B/level/end_screen.tscn")
 	
 func KeyListenerPress(button_name: String, array_num: int):
 	print(str(array_num) + " " + str($MusicPlayer.get_playback_position()))
@@ -59,8 +64,5 @@ func SpawnFallingKey(button_name: String, delay: float):
 	await get_tree().create_timer(delay).timeout
 	Signals.CreateFallingKey.emit(button_name)
 
-
-
 func _on_music_player_finished():
 	print(fk_output_arr)
-	get_tree().change_scene_to_file("res://zPLAN_B/level/end_screen.tscn") # move to end screen
