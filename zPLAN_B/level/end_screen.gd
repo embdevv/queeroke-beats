@@ -12,8 +12,8 @@ func _ready():
 	
 	rolling_timer = 0.0
 	showing_actual = false
-	score_label.text = "[center]---[/center]"
-	result_label.text = "[center]Calculating results...[/center]"
+	score_label.text = "[center]---"
+	result_label.text = "[center]Calculating results..."
 	
 	#score_label.text = "[center] %d [/center]" % GameStats.final_score
 	#combo_label.text = "Max Combo  : %d" % GameStats.final_combo
@@ -31,18 +31,18 @@ func _process(delta):
 func show_random_results():
 	var random_score = randi() % 99999
 	
-	score_label.text = "[center] %d [/center]" % random_score
-	result_label.text = "[center][color = yellow]Calculating...[/color] [/center]"
+	score_label.text = "[center] %d " % random_score
+	result_label.text = "[center][color=yellow]Calculating..."
 
 func show_actual_results():
-	score_label.text = "[center] %d [/center]" % GameStats.final_score
+	score_label.text = "[center] %d" % GameStats.final_score
 	
 	if GameStats.final_score >= 20000:
-		result_label.text = "[center] [color=gold] Amazing! You are truly a star [/center][/color][/center]"
+		result_label.text = "[center] [color=gold] Amazing! You are truly a star"
 	elif GameStats.final_score < 20000:
-		result_label.text = "[center] [color=silver] Good job! Let's aim for a higher one next time [/color] [/center]"
+		result_label.text = "[center] [color=silver] Good job! Let's aim for a higher one next time"
 	else:
-		result_label.text = "[center][color=bronze]Keep practicing![/color][/center]"
+		result_label.text = "[center][color=bronze]Keep practicing!"
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
