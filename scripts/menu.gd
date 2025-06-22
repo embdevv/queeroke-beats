@@ -6,7 +6,6 @@ extends Control
 func _ready() -> void:
 	options.hide()
 	calibration_opts.hide()
-	print("hello, world!")
 	
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://zPLAN_B/level/song_select.tscn")
