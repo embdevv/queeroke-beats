@@ -61,18 +61,22 @@ func _process(delta):
 				Signals.IncrementScore.emit(great_press_score)
 				press_score_text = "GREAT"
 				Signals.IncrementCombo.emit()
+				sfx_hit.play()
 			elif distance_from_pass < good_press_threshold:
 				Signals.IncrementScore.emit(good_press_score)
 				press_score_text = "GOOD"
 				Signals.IncrementCombo.emit()
+				sfx_hit.play()
 			elif distance_from_pass < ok_press_threshold:
 				Signals.IncrementScore.emit(ok_press_score)
 				press_score_text = "OKAY"
 				Signals.IncrementCombo.emit()
+				sfx_hit.play()
 			elif distance_from_pass < missed_press_threshold:
 				Signals.IncrementScore.emit(missed_press_score)
 				press_score_text = "MISS"
 				Signals.ResetCombo.emit()
+				sfx_hit.play()
 			else:
 				pass
 
