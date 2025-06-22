@@ -1,7 +1,10 @@
 extends Control
 
 var score: int = 0
-var combo_count: int = 0
+var combo: int = 0
+
+@onready var score_label: RichTextLabel = %ScoreLabel
+@onready var combo_label: RichTextLabel = %ComboLabel
 
 func _ready():
 	Signals.IncrementScore.connect(IncrementScore)
@@ -10,13 +13,12 @@ func _ready():
 
 func IncrementScore(incr: int):
 	score += incr
-	%ScoreLabel.text = " " + str(score) + " pts"
-	
+	score_label.text = "Score: %d" % score
 
 func IncrementCombo():
-	combo_count += 1
-	%ComboLabel.text = " " + str(combo_count) + "x combo"
+	combo += 1
+	combo_label.text = "Combo: %dx" % combo
 
 func ResetCombo():
-	combo_count = 0
-	%ComboLabel.text = ""
+	combo = 0
+	combo_label.text = "Combo: 0"

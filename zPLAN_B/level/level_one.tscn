@@ -1,30 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://7lsk5x1e5tvt"]
+[gd_scene load_steps=9 format=3 uid="uid://7lsk5x1e5tvt"]
 
 [ext_resource type="PackedScene" uid="uid://bn06sx31q13qg" path="res://zPLAN_B/core/key_listener.tscn" id="1_bhnhe"]
-[ext_resource type="Texture2D" uid="uid://cgevjkjq4tewy" path="res://assets/levelOne/Frame1.PNG" id="1_txpru"]
-[ext_resource type="Texture2D" uid="uid://bvv87hnvis1lv" path="res://assets/levelOne/Frame2.png" id="2_6kkp2"]
+[ext_resource type="Script" uid="uid://funiuqohxth5" path="res://zPLAN_B/level/level_one.gd" id="1_ppcum"]
+[ext_resource type="Texture2D" uid="uid://blamsjl5nv80c" path="res://zPLAN_B/level/Newframe1.PNG" id="2_ppcum"]
+[ext_resource type="Texture2D" uid="uid://cywxdq8xp36fh" path="res://zPLAN_B/level/Newframe2.PNG" id="3_52oxu"]
 [ext_resource type="PackedScene" uid="uid://bk5as5rvn577a" path="res://zPLAN_B/core/score_press_text.tscn" id="4_1mhk1"]
 [ext_resource type="PackedScene" uid="uid://cl13um8la1ev5" path="res://zPLAN_B/core/game_ui.tscn" id="4_inj7o"]
 [ext_resource type="PackedScene" uid="uid://clsx6sj35xxan" path="res://zPLAN_B/core/level_editor.tscn" id="6_1mhk1"]
+[ext_resource type="FontFile" uid="uid://dtbm3kmdmlhtd" path="res://assets/fonts/EricaOne-Regular.ttf" id="8_52oxu"]
 
 [node name="LevelOne" type="Node2D"]
+script = ExtResource("1_ppcum")
 metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_horizontal_guides_ = [324.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-13, -10)
-zoom = Vector2(0.8, 0.8)
+position = Vector2(-9, 81)
+
+[node name="Frame1" type="Sprite2D" parent="."]
+position = Vector2(-140, 85)
+scale = Vector2(0.162909, 0.16)
+texture = ExtResource("2_ppcum")
 
 [node name="Frame2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-159, -7)
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_6kkp2")
-
-[node name="Frame1" type="Sprite2D" parent="."]
-position = Vector2(-138.5, -11)
-scale = Vector2(0.215091, 0.203)
-texture = ExtResource("1_txpru")
+position = Vector2(-140, 85)
+scale = Vector2(0.162909, 0.16)
+texture = ExtResource("3_52oxu")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = -217.0
@@ -66,3 +68,39 @@ offset_right = 1.0
 offset_bottom = -4.0
 
 [node name="LevelEditor" parent="." instance=ExtResource("6_1mhk1")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -163.0
+offset_top = 357.0
+offset_right = -141.0
+offset_bottom = 403.0
+theme_override_fonts/font = ExtResource("8_52oxu")
+theme_override_font_sizes/font_size = 30
+text = "A"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -60.0
+offset_top = 356.0
+offset_right = -39.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("8_52oxu")
+theme_override_font_sizes/font_size = 30
+text = "S"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 356.0
+offset_right = 74.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("8_52oxu")
+theme_override_font_sizes/font_size = 30
+text = "K"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 159.0
+offset_top = 355.0
+offset_right = 174.0
+offset_bottom = 401.0
+theme_override_fonts/font = ExtResource("8_52oxu")
+theme_override_font_sizes/font_size = 30
+text = "L"
