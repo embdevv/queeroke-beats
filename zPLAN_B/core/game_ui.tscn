@@ -34,6 +34,7 @@ vertical_alignment = 1
 
 [node name="ComboLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 offset_left = 375.0
 offset_top = 1.0
 offset_right = 733.0

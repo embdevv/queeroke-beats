@@ -65,6 +65,7 @@ key_name = "button_L"
 array_mum = 3
 
 [node name="ScorePressText" parent="." instance=ExtResource("5_twiv3")]
+visible = false
 
 [node name="GameUI" parent="." instance=ExtResource("6_c4b5m")]
 offset_left = 1.0
